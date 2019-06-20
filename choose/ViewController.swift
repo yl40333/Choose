@@ -113,6 +113,15 @@ class ViewController: UIViewController {
             Start.isHidden = false
             Startimg.isHidden = false
         }
+        
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if timer != nil{
+            timer?.invalidate()
+            sec = 0
+        }
     }
     
     @IBAction func StartGame(_ sender: UIButton) {
@@ -141,7 +150,7 @@ class ViewController: UIViewController {
         let okAction = UIAlertAction(title: "再玩一次", style: .default, handler:
         {
             (action: UIAlertAction!) -> Void in self.viewDidLoad()
-            })
+        })
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
         self.view.setNeedsLayout()

@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  choose
+//  Note
 //
-//  Created by User15 on 2019/06/15.
-//  Copyright © 2018 ee. All rights reserved.
+//  Created by user21 on 2019/6/13.
+//  Copyright © 2019 user21. All rights reserved.
 //
 
 import UIKit
-import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,21 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
-            if granted {
-                print("使用者同意收到提醒啦")
-            }
-            else {
-                print("使用者不同意收到提醒")
-            }
-            
-        })
-        
         return true
     }
-    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -55,3 +43,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 }
+
